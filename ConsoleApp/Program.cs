@@ -4,6 +4,57 @@
 //using System.Diagnostics;
 //using System.Security.Cryptography.X509Certificates;
 
+using System.Threading.Channels;
+
+public class Vehicle
+{
+    public string Brand { get; set; }
+    public int Speed { get; set; }
+    public void Start()
+    {
+        Console.WriteLine("Vehicle is Start");
+    }
+}
+public class Car : Vehicle
+{
+    public int Door { get; set; }
+    public void CarDoor()
+    {
+        Console.WriteLine($"Car have {Door} doors");
+    }
+
+}
+public class Bike : Vehicle
+{
+    public bool hasHelment { get; set; }
+    public void HasHelemt()
+    {
+        Console.WriteLine("Bike Rider have helment");
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Car car = new Car();
+            car.Start();
+            car.Brand = "Toyota";
+            car.Speed = 120;
+            car.Door = 4;
+            car.CarDoor();
+
+
+
+            Console.WriteLine(car.Brand);
+            Bike bike = new Bike();
+            bike.Brand = "Honda";
+            bike.Speed = 80;
+            bike.hasHelment = true;
+            bike.Start();
+            bike.HasHelemt();
+        }
+    }
+}
 
 
 
@@ -156,64 +207,109 @@
 
 
 
-using System;
-using System.Reflection.Metadata;
 
-class person
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public person(string n, int a)
-    {
-        Name = n;
-        Age = a;
-    }
+//public class EMPLOYEE
+//{
+//    public string Name { get; set; }
+//    public decimal BaseSalary { get; set; }
 
-    public void PersonDisplay()
-    {
-        Console.WriteLine($"Name: {Name} Age: {Age}");
-    }
+//    public void yourName()
+//    {
+//        Console.WriteLine("Employee Name: " + Name);
+//    }
+//    public void EmployeeDetails()
+//    {
+//        Console.WriteLine("Employee Base Salary: " + BaseSalary);
+//    }
+//}
 
-    class Employee : person
-    {
-        public string Company { get; set; }
-        public string Posistion { get; set; }
-        public decimal Salary { get; set; }
-        public Employee(string n, int a, string c, string p, decimal s): base(n, a)
-        {
-            Posistion = p;
-            Company = c;
-            Salary = s;
-        }
+//public class DEVELOPER : EMPLOYEE
+//{
+//    public void DeveloperDetails()
+//    {
+//        Console.WriteLine("Developer Base Salary: " + BaseSalary);
+//    }
+//}
 
-        public void EmployeeDeisplay()
-        {
-            Console.WriteLine($"Company: {Company} Position: {Posistion} Salary: {Salary}");
-        }
+//public class SALES : EMPLOYEE
+//{
+//    public void SalesDetails()
+//    {
+//       Console.WriteLine("Salse Base Salary: " + BaseSalary);
+//    }
+//}
 
-    }
-    public static void Main()
-    {
+//public class Program
+//{
+//    public static void Main()
+//    {
+//        EMPLOYEE employee = new EMPLOYEE();
+//        employee.Name = "SOBAN";
+//        employee.BaseSalary = 1000m;
+//        employee.EmployeeDetails();
+//        employee.yourName();
 
-        Console.WriteLine("Enter the NAME");
-        string Name  = Console.ReadLine();
+//        Console.WriteLine();
 
-        Console.WriteLine("Enter your AGE");
-        int Age   = Convert.ToInt32(Console.ReadLine());
-
-
-            person p = new person(Name, Age);
-            p.PersonDisplay();
-        
-
-        Employee employee = new Employee(Name, Age, "Microsoft", "Software Engineer", 100000);
-        employee.EmployeeDeisplay();
-
-        Console.ReadLine();
+//        DEVELOPER developer = new DEVELOPER();
+//        developer.Name = "Ali";
+//        developer.BaseSalary = 2000.00m;
+//        developer.DeveloperDetails();
+//        developer.yourName();
 
 
+//        Console.WriteLine();
+
+//        SALES sales = new SALES();
+//        sales.Name = "Ahmed";
+//        sales.BaseSalary = 3000.00m;
+//        sales.SalesDetails();
+//        developer.yourName();
 
 
 
-    }
-}
+//    }
+//}
+
+
+//public class Dev
+//{
+//    public string Name { get; set; }
+//    public string DEVNAME() 
+//    {
+//        Console.WriteLine("THIS IS DEV");
+//        return Name;
+//    }
+//}
+//public class Hr : Dev
+//{
+//    public  string policy { get; set; }
+//    public  decimal salary { get; set; }
+
+
+//    public void HrRules()
+//    {
+//        Console.WriteLine("THIS IS HR POLICY");
+//        Console.WriteLine("THIS IS SALARY");
+//    }
+
+//}
+//public class Program
+//{
+//    public static void Main()
+//    {
+//Dev dev = new Dev();
+//dev.Name = " SOBAN";
+//dev.DEVNAME();
+
+//Hr hr = new Hr();
+//hr.Name = "Ali";
+//hr.policy = "TODAY OFF";
+//hr.salary = 2000.000m;
+
+//Console.WriteLine(hr.Name);
+//Console.WriteLine(dev.Name);
+//hr.HrRules();
+//hr.DEVNAME();
+//}
+//}
