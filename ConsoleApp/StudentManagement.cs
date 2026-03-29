@@ -13,7 +13,7 @@ namespace ConsoleApp
 
         public void StudentDetails()
         {
-            List<Student> Students = new List<Student>();
+            List<StudentManagement> Students = new List<StudentManagement>();
 
             while (true)
             {
@@ -23,11 +23,12 @@ namespace ConsoleApp
                 Console.WriteLine("View Student " + 2);
                 Console.WriteLine("Update Student " + 3);
                 Console.WriteLine("Delete Student " + 4);
+                Console.WriteLine("Delete Student " + 5);
 
                 int input = int.Parse(Console.ReadLine());
                 if (input == 1)
                 {
-                    Student student = new Student();
+                    StudentManagement student = new StudentManagement();
                     Console.WriteLine("Enter Id : ");
                     int Ids = int.Parse(Console.ReadLine());
 
@@ -59,13 +60,30 @@ namespace ConsoleApp
                             Console.WriteLine("Name : " + student.Name);
                             Console.WriteLine("Age : " + student.Age);
                         }
-
                     }
 
                 }
-                if (input == 3)
+                if (input == 4)
                 {
+                    Console.WriteLine("Enter Id : ");
+                    int Ids = int.Parse(Console.ReadLine());
 
+                    foreach (var student in Students)
+                    {
+                        if (Ids == student.Id)
+                        {
+                            Students.Remove(student);
+                            Console.WriteLine("STUDENT DELETE SUCCSECCFULLY!");
+                        }
+                        else { Console.WriteLine("NOT FOUND User"); }
+                    
+                    }
+
+                }
+                if (input == 5)
+                {
+                    Console.WriteLine("Exiting Program...");
+                    break;
                 }
                 else { Console.WriteLine("Invalid Record"); }
             }
