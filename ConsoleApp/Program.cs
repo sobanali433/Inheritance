@@ -4,57 +4,75 @@
 //using System.Diagnostics;
 //using System.Security.Cryptography.X509Certificates;
 
+using System.Collections.Concurrent;
+using System.ComponentModel.Design;
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 using System.Threading.Channels;
-
-public class Vehicle
-{
-    public string Brand { get; set; }
-    public int Speed { get; set; }
-    public void Start()
-    {
-        Console.WriteLine("Vehicle is Start");
-    }
-}
-public class Car : Vehicle
-{
-    public int Door { get; set; }
-    public void CarDoor()
-    {
-        Console.WriteLine($"Car have {Door} doors");
-    }
-
-}
-public class Bike : Vehicle
-{
-    public bool hasHelment { get; set; }
-    public void HasHelemt()
-    {
-        Console.WriteLine("Bike Rider have helment");
-    }
-
-    public class Program
-    {
-        public static void Main()
-        {
-            Car car = new Car();
-            car.Start();
-            car.Brand = "Toyota";
-            car.Speed = 120;
-            car.Door = 4;
-            car.CarDoor();
+using System.Transactions;
+using System.Xml.Linq;
 
 
 
-            Console.WriteLine(car.Brand);
-            Bike bike = new Bike();
-            bike.Brand = "Honda";
-            bike.Speed = 80;
-            bike.hasHelment = true;
-            bike.Start();
-            bike.HasHelemt();
-        }
-    }
-}
+
+
+
+//1121
+
+
+
+//using System.Threading.Channels;
+
+//public class Vehicle
+//{
+//    public string Brand { get; set; }
+//    public int Speed { get; set; }
+//    public void Start()
+//    {
+//        Console.WriteLine("Vehicle is Start");
+//    }
+//}
+//public class Car : Vehicle
+//{
+//    public int Door { get; set; }
+//    public void CarDoor()
+//    {
+//        Console.WriteLine($"Car have {Door} doors");
+//    }
+
+//}
+//public class Bike : Vehicle
+//{
+//    public bool hasHelment { get; set; }
+//    public void HasHelemt()
+//    {
+//        Console.WriteLine("Bike Rider have helment");
+//    }
+
+//    public class Program
+//    {
+//        public static void Main()
+//        {
+//            Car car = new Car();
+//            car.Start();
+//            car.Brand = "Toyota";
+//            car.Speed = 120;
+//            car.Door = 4;
+//            car.CarDoor();
+
+
+
+//            Console.WriteLine(car.Brand);
+//            Bike bike = new Bike();
+//            bike.Brand = "Honda";
+//            bike.Speed = 80;
+//            bike.hasHelment = true;
+//            bike.Start();
+//            bike.HasHelemt();
+//        }
+//    }
+//}
 
 
 
@@ -200,12 +218,6 @@ public class Bike : Vehicle
 //        }
 //    }
 //}
-
-
-
-
-
-
 
 
 //public class EMPLOYEE
